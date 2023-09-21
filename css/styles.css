@@ -1,0 +1,14 @@
+nav {
+    background-color: rgb(9, 27, 93);
+}
+.category {
+    font-size: 20px;
+    color: rgb(9, 27, 93);
+    font-weight: 10px;
+    text-align: center;
+}
+
+.nav-wrapper {
+    font-size: 20px;
+    text-align: center;
+}
