@@ -1,0 +1,10 @@
+{
+    "name": "Infiszki",
+    "short_name": "Infiszki",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#091b5d",
+    "orientation": "portrait-primary",
+    "icons": []
+  }

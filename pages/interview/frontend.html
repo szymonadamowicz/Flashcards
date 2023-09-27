@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infiszki!</title>
+  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" href="/css/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <link rel="manifest" href="/manifest.json">
+</head>
+<body class ="white lighten-4">
+  <nav>
+    <div class="nav-wrapper container">
+      <a href="/"><span>INFISZKI</span></a>
+    </div>
+  </nav>
+  <div class="container-outer">
+    <div class="container-inner">
+      <div class="card-panel white row">
+        <button class="category-button" id="fiszkaButton"></button>
+        <div id="question-container"></div>
+        <div id="answer-container" style="display: none;"></div>
+      </div>
+      <div>
+        <button id="chooseCategoryButton" class="waves-effect waves-light btn">Powrót do kategorii</button>
+        <button id="nextQuestionButton" class="waves-effect waves-light btn">Następne pytanie</button>
+      </div>
+    </div>
+  </div>
+<script src="/js/flashcard_random.js"></script>
+</body>
+</html> 

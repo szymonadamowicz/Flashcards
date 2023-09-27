@@ -1,13 +1,39 @@
 nav {
     background-color: rgb(9, 27, 93);
 }
-.category {
+.category-button {
     font-size: 20px;
     color: rgb(9, 27, 93);
-    font-weight: 10px;
+    font-weight: bold;
     text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: none;
 }
 
+.container-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ustaw wysokość na 100% widoku okna przeglądarki */
+  }
+
+  .container-inner {
+    text-align: center;
+  }
+
+  /* Dodaj style dla pytania i odpowiedzi */
+  #question-container, #answer-container {
+    font-size: 20px;
+    color: rgb(9, 27, 93);
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #ffffff;
+    border: none;
+  }
 .nav-wrapper {
     font-size: 20px;
     text-align: center;

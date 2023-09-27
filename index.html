@@ -1,12 +1,15 @@
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Infiszki!</title>
-    <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-   <link type="text/css" href="/css/styles.css" rel="stylesheet">
-   <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="apple-mobile-web-app-status-bar" content="#091b5d">
+  <title>Infiszki!</title>
+  <link type="text/css" href="/css/materialize.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" href="/css/styles.css" rel="stylesheet">
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icons/icon-96x96.png">
 </head>
 <body class ="white lighten-4">
   <nav>
@@ -15,29 +18,29 @@
     </div>
   </nav>
 
-  <div class="container black-text text-darken-1">
-    <div class="card-panel white row">
-      <div class="category">FRONT-END Developer</div>
-    </div>
+<div class="container black-text text-darken-1">
+  <div class="card-panel white row">
+    <button class="category-button" onclick="goToPage('/pages/frontend.html')">FRONT-END Developer</button>
   </div>
+</div>
 
-  <div class="container black-text text-darken-1">
-    <div class="card-panel white row">
-      <div class="category">FRONT-END Developer</div>
-    </div>
+<div class="container black-text text-darken-1">
+  <div class="card-panel white row">
+    <button class="category-button" onclick="goToPage('/pages/backend.html')">BACK-END Developer</button>
   </div>
+</div>
 
-  <div class="container black-text text-darken-1">
-    <div class="card-panel white row">
-      <div class="category">FRONT-END Developer</div>
-    </div>
+<div class="container black-text text-darken-1">
+  <div class="card-panel white row">
+    <button class="category-button" onclick="goToPage('/pages/fullstack.html')">FULLSTACK Developer</button>
   </div>
+</div>
 
-  <div class="container black-text text-darken-1">
-    <div class="card-panel white row">
-      <div class="category">FRONT-END Developer</div>
-    </div>
+<div class="container black-text text-darken-1">
+  <div class="card-panel white row">
+    <button class="category-button" onclick="goToPage('/pages/software.html')">Software Developer</button>
   </div>
-
+</div>
+  <script src="/js/ui.js"></script>
 </body>
 </html>
