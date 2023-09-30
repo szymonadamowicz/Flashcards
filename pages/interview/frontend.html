@@ -12,19 +12,26 @@
 <body class ="white lighten-4">
   <nav>
     <div class="nav-wrapper container">
-      <a href="/"><span>INFISZKI</span></a>
+      <a href="/"><span>FRONTEND</span></a>
     </div>
   </nav>
   <div class="container-outer">
     <div class="container-inner">
+      <p class="progress-title">Progres</p>
+      <div class="progress">
+        <div class="determinate" id="progress-bar" style="width: 0%;"></div>
+      </div>
       <div class="card-panel white row">
-        <button class="category-button" id="fiszkaButton"></button>
+        <button class="category-button" id="flashcardButton"></button>
         <div id="question-container"></div>
         <div id="answer-container" style="display: none;"></div>
       </div>
       <div>
-        <button id="chooseCategoryButton" class="waves-effect waves-light btn">Powrót do kategorii</button>
-        <button id="nextQuestionButton" class="waves-effect waves-light btn">Następne pytanie</button>
+        <p id="help">Kliknij w fiszkę aby zobaczyć odpowiedź!</p>
+      </div>
+      <div>
+        <button id="chooseCategoryButton" class="waves-effect waves-light btn"><i class="material-icons">home</i></button>
+        <button id="nextQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_right</i></button>
       </div>
     </div>
   </div>

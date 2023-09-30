@@ -1,38 +1,47 @@
-var fiszki = [
-  { pytanie: "Pytanie 1?", odpowiedz: "Odpowiedź na pytanie 1." },
-  { pytanie: "Pytanie 2?", odpowiedz: "Odpowiedź na pytanie 2." },
-  { pytanie: "Pytanie 3?", odpowiedz: "Odpowiedź na pytanie 3." },
-];
-
+var flashcards;
 var currentQuestionIndex = -1; 
 var questionsUsed = [];
 
+function fetchFlashcards() {
+  fetch('/files/flashcards.json')
+    .then(response => response.json())
+    .then(data => {
+      flashcards = data;
+      showQuestion();
+    })
+    .catch(error => console.error('Błąd pobierania danych z pliku JSON:', error));
+}
+
+
 function showQuestion() {
-  if (questionsUsed.length === fiszki.length) {
+  if (questionsUsed.length === flashcards.length) {
     var questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = "Nie ma więcej pytań.";
     questionContainer.style.display = "block";
-    document.getElementById("nextQuestionButton").style.display = "none";
-
+    document.getElementById("nextQuestionButton");
+    nextQuestionButton.disabled = true;
+    var help = document.getElementById("help");
+    help.style.visibility = "hidden";
     var answerContainer = document.getElementById("answer-container");
     answerContainer.innerHTML = "";
     answerContainer.style.display = "none";
   } else {
     var newIndex;
     do {
-      newIndex = Math.floor(Math.random() * fiszki.length);
+      newIndex = Math.floor(Math.random() * flashcards.length);
     } while (questionsUsed.includes(newIndex));
-  
+    var help = document.getElementById("help");
+    help.style.display = "block";
     questionsUsed.push(newIndex);
   
-    var randomQuestion = fiszki[newIndex].pytanie;
-    var randomAnswer = fiszki[newIndex].odpowiedz;
+    var randomQuestion = flashcards[newIndex].question;
+    var randomAnswer = flashcards[newIndex].answer;
   
-    var fiszkaButton = document.getElementById("fiszkaButton");
+    var flashcardButton = document.getElementById("flashcardButton");
     var questionContainer = document.getElementById("question-container");
     var answerContainer = document.getElementById("answer-container");
   
-    fiszkaButton.style.display = "none";
+    flashcardButton.style.display = "none";
     questionContainer.innerHTML = randomQuestion;
     questionContainer.style.display = "block";
     answerContainer.style.display = "none";
@@ -43,6 +52,13 @@ function showQuestion() {
       answerContainer.style.display = "block";
     };
   }
+  updateProgressBar();
+
+}
+function updateProgressBar() {
+  const progressBar = document.getElementById("progress-bar");
+  const progress = ((questionsUsed.length)  / (flashcards.length) * 100);
+  progressBar.style.width = progress + "%";
 }
 
 
@@ -54,6 +70,6 @@ function redirectToIndex() {
   window.location.href = "/index.html";
 }
 
-window.addEventListener("load", showQuestion);
+window.addEventListener("load", fetchFlashcards);
 document.getElementById("nextQuestionButton").addEventListener("click", nextQuestion);
 document.getElementById("chooseCategoryButton").addEventListener("click", redirectToIndex);
