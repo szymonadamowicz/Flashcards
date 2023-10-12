@@ -43,9 +43,10 @@ function showQuestion() {
       answerContainer.style.display = "block";
     };
   } else {
-    questionContainer.style.display = "block";
+    questionContainer.style.display = "inline-block";
     questionContainer.innerHTML = "Nie ma więcej pytań.";
     answerContainer.style.display = "none";
+    flashcardButton.disabled = "true";
   }
 
   if (currentQuestionIndex == flashcards.length) {
