@@ -18,28 +18,29 @@
       <a href="/"><span>JAVASCRIPT</span></a>
     </div>
   </nav>
-  
-  
+  <div class = "progress-bar-placement">
+    <p id = "abc" class="progress-title">Progres Bar</p>
+    <div class="progress">
+      <div class="determinate" id="progress-bar" style="width: 0%;"></div>
+    </div>    
+  </div>
+
   <div class="container-outer">
     <div class="container-inner">
-      <p id = "abc" class="progress-title">Progres Bar</p>
-      <div class="progress">
-        <div class="determinate" id="progress-bar" style="width: 0%;"></div>
-      </div>
       <div class="card-panel white row">
         <div id="question-container"></div>
         <div id="answer-container" style="display: none;"></div>
       </div>
-      <div>
-        <p id="help">Kliknij w fiszkę aby zobaczyć odpowiedź!</p>
-      </div>
-      <div>
-        <button id="prevQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_left</i></button>
-        <button id="nextQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_right</i></button>
-        
-      </div>
     </div>
   </div>
+
+    <div class="next-previous-button">
+        
+      <p id="help">Kliknij w fiszkę aby zobaczyć odpowiedź!</p>
+      <button id="prevQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_left</i></button>
+      <button id="nextQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_right</i></button>
+      
+    </div>
 
 <script src="/js/flaschcard_order.js"></script>
 </body>

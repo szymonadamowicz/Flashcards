@@ -40,11 +40,9 @@ function showQuestion() {
     var randomQuestion = flashcards[newIndex].question;
     var randomAnswer = flashcards[newIndex].answer;
   
-    var flashcardButton = document.getElementById("flashcardButton");
     var questionContainer = document.getElementById("question-container");
     var answerContainer = document.getElementById("answer-container");
   
-    flashcardButton.style.display = "none";
     questionContainer.innerHTML = randomQuestion;
     questionContainer.style.display = "block";
     answerContainer.style.display = "none";
