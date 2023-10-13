@@ -1,15 +1,23 @@
 [
     {
-      "question": "Pytakosodkfpsaoidjf o;saidjfasinvlkaj dvbierieb heerehdas dsf adf ad adsf adf adf adf vvvreh hrorohbrb reqbhreboebvboiuv reqbyreqbv boqobo boy qqobinie 1?",
-      "answer": "Odpowiedź na pytaniwiedź na pytaniwiedź na pytaniwiedź na pytaniwiedź na pytaniwiedź na pytaniwiedź na pytaniwiedź na pytaniwiedź na pytaniwiedź na pytanie 1."
+      "question": " Co to jest JavaScript?",
+      "answer": "JavaScript to język programowania stosowany do tworzenia interaktywnych stron internetowych."
     },
     {
-      "question": "Pytanie 2?",
-      "answer": "Odpowiedź na pytanie 2."
+      "question": "Jakie są trzy podstawowe typy danych w JavaScript?",
+      "answer": "Trzy podstawowe typy danych w JavaScript to: liczby (numbers), ciągi znaków (strings) i logiczne (booleans)."
     },
     {
-      "question": "**Pytanie 3?**",
-      "answer": "Odpowiedź na pytanie 3."
+      "question": "Co to jest zmienna w JavaScript i jak ją zadeklarować?",
+      "answer": " Zmienna w JavaScript to nazwany kontener na przechowywanie danych. Aby zadeklarować zmienną, używamy słów kluczowych 'var,' 'let,' lub 'const'."
+    },
+    {
+      "question": "Jakie są warunki (if statements) w JavaScript i do czego służą?",
+      "answer": "Warunki w JavaScript to instrukcje, które pozwalają na wykonywanie różnych działań w zależności od spełnienia określonego warunku."
+    },
+    {
+      "question": "Co to jest funkcja w JavaScript i jak ją zdefiniować?",
+      "answer": "Funkcja w JavaScript to zestaw instrukcji, które można wywołać wielokrotnie w kodzie. Definiujemy funkcję używając słowa kluczowego 'function'."
     }
   ]
   

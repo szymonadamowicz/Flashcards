@@ -78,7 +78,7 @@ function updateProgressBar() {
 function nextQuestion() {
   if (currentQuestionIndex < flashcards.length) {
     var answerContainer = document.getElementById("answer-container");
-    answerContainer.style.display = "none";
+    answerContainer.style.display = "none"; // Hide the answer container
     currentQuestionIndex++;
     showQuestion();
     updateProgressBar();

@@ -62,7 +62,7 @@ nav {
   background-color: rgb(9, 27, 93);
   align-items: center;
   position: absolute;
-  top: 10px;
+  top: 9.5px;
   left: 10px; 
 }
 
@@ -70,18 +70,20 @@ nav {
   background-color: rgb(9, 27, 93);
   align-items: center;
   position: absolute;
-  top: 10px;
+  top: 9.5px;
   left: 10px; 
 }
 
 #nextQuestionButton {
   background-color: rgb(9, 27, 93);
-  margin-bottom: 20px;
+  margin-bottom: auto;
+  margin-right: auto;
  }
 
 #prevQuestionButton{
   background-color: rgb(9, 27, 93);
-  margin-bottom: 20px;
+  margin-bottom: auto;
+  margin-left: auto;
 
 }
 
