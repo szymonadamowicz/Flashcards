@@ -46,11 +46,32 @@ nav {
 .nav-wrapper {
   font-size: 20px;
   text-align: center;
+  margin-left: 0px;
+  margin-right: 0px;
+  width: 100%;
+}
+
+.material-icons{
+  display: table-cell !important;
+  vertical-align: middle;
+  line-height:0 !important;
+  height:100% !important;
 }
 
 #chooseCategoryButton {
- background-color: rgb(9, 27, 93);
- margin-bottom: 20px;
+  background-color: rgb(9, 27, 93);
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px; 
+}
+
+#chooseCategory{
+  background-color: rgb(9, 27, 93);
+  align-items: center;
+  position: absolute;
+  top: 10px;
+  left: 10px; 
 }
 
 #nextQuestionButton {
@@ -64,13 +85,15 @@ nav {
 
 }
 
+
  #help {
   margin: 10px;
   color: rgb(9, 27, 93);
 }
 
  .progress-title  {
-  margin: 50px;
+  padding-bottom: 20px;
+  margin: 10px;
   color: rgb(9, 27, 93);
   font-weight: bold;
   font-size: 15px;
@@ -84,4 +107,18 @@ nav {
 #progress-bar {
   background-color: rgb(9, 27, 93);
 
+}
+.card-panel {
+  font-size: 20px;
+  color: rgb(9, 27, 93);
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: none;
+}
+
+.card-panel:hover {
+  background-color: #f0f0f0; 
 }

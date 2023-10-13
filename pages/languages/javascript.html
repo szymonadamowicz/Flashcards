@@ -12,24 +12,27 @@
 <body class ="white lighten-4">
   <nav>
     <div class="nav-wrapper container">
-      <a href="/"><span>FRONTEND</span></a>
+        <button id="chooseCategoryButton" class="waves-effect waves-light btn">
+        <i class="material-icons">keyboard_backspace</i>
+        </button>
+      <a href="/"><span>JAVASCRIPT</span></a>
     </div>
   </nav>
 
   <div class="container black-text text-darken-1">
     <div class="card-panel white row">
-      <button class="category-button" onclick="goToPage('/pages/learning/frontend.html')">NAUKA</button>
+      <button class="category-button" onclick="goToPage('/pages/learning/javascript.html')">NAUKA</button>
     </div>
   </div>
 
   <div class="container black-text text-darken-1">
     <div class="card-panel white row">
-      <button class="category-button" onclick="goToPage('/pages/interview/frontend.html')">INTERVIEW</button>
+      <button class="category-button" onclick="goToPage('/pages/interview/javascript.html')">INTERVIEW</button>
     </div>
   </div>
 
   
-  
-  <script src="/js/ui.js"></script>
+  <script src="/js/back_arrows/ui.js"></script>
+  <script src="/js/back_arrows/ui3.js"></script>
 </body>
 </html>

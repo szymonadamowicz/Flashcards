@@ -14,7 +14,7 @@ function fetchFlashcards() {
 
 
 function showQuestion() {
-  var flashcardButton = document.getElementById("flashcardButton");
+  var flashcardButton = document.getElementById("question-container");
   var questionContainer = document.getElementById("question-container");
   var answerContainer = document.getElementById("answer-container");
 
@@ -43,10 +43,11 @@ function showQuestion() {
       answerContainer.style.display = "block";
     };
   } else {
-    questionContainer.style.display = "inline-block";
+    questionContainer.style.display = "block";
     questionContainer.innerHTML = "Nie ma więcej pytań.";
-    answerContainer.style.display = "none";
-    flashcardButton.disabled = "true";
+    questionContainer.onclick = console.log();
+    questionContainer.disabled = "false";
+
   }
 
   if (currentQuestionIndex == flashcards.length) {
@@ -67,15 +68,21 @@ function showQuestion() {
 
 function updateProgressBar() {
   const progressBar = document.getElementById("progress-bar");
-  const progress = ((currentQuestionIndex + 1) / flashcards.length) * 100; 
+  const progress = ((currentQuestionIndex ) / flashcards.length) * 100; 
   progressBar.style.width = progress + "%"; 
+  document.getElementById("abc").innerHTML = "Progres Bar " + (currentQuestionIndex) + '/' + flashcards.length;
+
 }
 
 
 function nextQuestion() {
-  currentQuestionIndex++;
-  showQuestion();
-  updateProgressBar();
+  if (currentQuestionIndex < flashcards.length) {
+    var answerContainer = document.getElementById("answer-container");
+    answerContainer.style.display = "none";
+    currentQuestionIndex++;
+    showQuestion();
+    updateProgressBar();
+  }
 }
 
 
@@ -89,7 +96,7 @@ function prevQuestion() {
 
 
 function redirectToIndex() {
-  window.location.href = "/index.html";
+  window.location.href = "/../pages/languages/javascript.html";
 }
 
 
@@ -97,3 +104,4 @@ document.getElementById("prevQuestionButton").addEventListener("click", prevQues
 document.getElementById("nextQuestionButton").addEventListener("click", nextQuestion);
 document.getElementById("chooseCategoryButton").addEventListener("click", redirectToIndex);
 window.addEventListener("load", fetchFlashcards);
+

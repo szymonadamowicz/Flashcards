@@ -12,12 +12,15 @@
 <body class ="white lighten-4">
   <nav>
     <div class="nav-wrapper container">
+      <button id="chooseCategoryButton" class="waves-effect waves-light btn">
+        <i class="material-icons">keyboard_backspace</i>
+      </button>
       <a href="/"><span>FRONTEND</span></a>
     </div>
   </nav>
   <div class="container-outer">
     <div class="container-inner">
-      <p class="progress-title">Progres</p>
+      <p id="acb" class="progress-title">Progres Bar</p>
       <div class="progress">
         <div class="determinate" id="progress-bar" style="width: 0%;"></div>
       </div>
@@ -27,14 +30,13 @@
         <div id="answer-container" style="display: none;"></div>
       </div>
       <div>
-        <p id="help">Kliknij w fiszkę aby zobaczyć odpowiedź!</p>
+        <p id="help">Kliknij w fiszkę, aby zobaczyć odpowiedź!</p>
       </div>
       <div>
-        <button id="chooseCategoryButton" class="waves-effect waves-light btn"><i class="material-icons">home</i></button>
         <button id="nextQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_right</i></button>
       </div>
     </div>
   </div>
 <script src="/js/flashcard_random.js"></script>
 </body>
-</html> 
+</html>

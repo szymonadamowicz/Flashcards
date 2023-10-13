@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -11,36 +12,32 @@
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/icons/icon-96x96.png">
 </head>
-<body class ="white lighten-4">
+<body class="white lighten-4">
   <nav>
     <div class="nav-wrapper container">
       <a href="/"><span>INFISZKI</span></a>
     </div>
   </nav>
 
-<div class="container black-text text-darken-1">
-  <div class="card-panel white row">
-    <button class="category-button" onclick="goToPage('/pages/frontend.html')">FRONT-END Developer</button>
+  <div class="container black-text text-darken-1">
+    <div class="card-panel white row" onclick="goToPage('pages/category_pages/frontend.html')">
+      FRONT-END Developer
+    </div>
   </div>
-</div>
 
-<div class="container black-text text-darken-1">
-  <div class="card-panel white row">
-    <button class="category-button" onclick="goToPage('/pages/backend.html')">BACK-END Developer</button>
+  <div class="container black-text text-darken-1">
+    <div class="card-panel white row" onclick="goToPage('/pages/backend.html')">
+      BACK-END Developer
+    </div>
   </div>
-</div>
 
-<div class="container black-text text-darken-1">
-  <div class="card-panel white row">
-    <button class="category-button" onclick="goToPage('/pages/fullstack.html')">FULLSTACK Developer</button>
+  <div class="container black-text text-darken-1">
+    <div class="card-panel white row" onclick="goToPage('/pages/fullstack.html')">
+      FULLSTACK Developer
+    </div>
   </div>
-</div>
 
-<div class="container black-text text-darken-1">
-  <div class="card-panel white row">
-    <button class="category-button" onclick="goToPage('/pages/software.html')">Software Developer</button>
-  </div>
-</div>
-  <script src="/js/ui.js"></script>
+
+  <script src="/js/back_arrows/ui.js"></script>
 </body>
 </html>

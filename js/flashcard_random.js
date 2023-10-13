@@ -1,6 +1,7 @@
 var flashcards;
 var currentQuestionIndex = -1; 
 var questionsUsed = [];
+var questionCount = 0;
 
 function fetchFlashcards() {
   fetch('/files/flashcards.json')
@@ -17,6 +18,8 @@ function showQuestion() {
   if (questionsUsed.length === flashcards.length) {
     var questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = "Nie ma więcej pytań.";
+    questionContainer.onclick = console.log();
+    questionContainer.disabled = "true";
     questionContainer.style.display = "block";
     document.getElementById("nextQuestionButton");
     nextQuestionButton.disabled = true;
@@ -55,10 +58,17 @@ function showQuestion() {
   updateProgressBar();
 
 }
+
 function updateProgressBar() {
-  const progressBar = document.getElementById("progress-bar");
-  const progress = ((questionsUsed.length)  / (flashcards.length) * 100);
+  
+  if (document.getElementById("question-container").innerText == "Nie ma więcej pytań."){
+    progress = 100;
+  }
+  var progressBar = document.getElementById("progress-bar");
+  var progress = ((questionCount ) / flashcards.length) * 100;
   progressBar.style.width = progress + "%";
+  document.getElementById("acb").innerHTML = "Progres Bar " + (questionCount) + '/' + (flashcards.length);
+  questionCount ++
 }
 
 
@@ -67,7 +77,7 @@ function nextQuestion() {
 }
 
 function redirectToIndex() {
-  window.location.href = "/index.html";
+  window.location.href = "/../pages/languages/javascript.html";
 }
 
 window.addEventListener("load", fetchFlashcards);
