@@ -76,23 +76,22 @@ function updateProgressBar() {
 
 var answerVisible = false;
 
-// Funkcja do przełączania widoczności odpowiedzi
+
 function toggleAnswer() {
   var answerContainer = document.getElementById("answer-container");
   var questionContainer = document.getElementById("question-container");
 
   if (!answerVisible) {
-    answerContainer.style.display = "block"; // Wyświetl odpowiedź
-    questionContainer.style.display = "none"; // Ukryj pytanie
+    answerContainer.style.display = "block";
+    questionContainer.style.display = "none";
     answerVisible = true;
   } else {
-    answerContainer.style.display = "none"; // Ukryj odpowiedź
-    questionContainer.style.display = "block"; // Wyświetl pytanie
+    answerContainer.style.display = "none";
+    questionContainer.style.display = "block";
     answerVisible = false;
   }
 }
 
-// Dodaj nasłuchiwanie zdarzenia kliknięcia
 var answerContainer = document.getElementById("answer-container");
 if (answerContainer) {
   answerContainer.addEventListener("click", toggleAnswer);
@@ -102,7 +101,7 @@ if (answerContainer) {
 function nextQuestion() {
   if (currentQuestionIndex < flashcards.length) {
     var answerContainer = document.getElementById("answer-container");
-    answerContainer.style.display = "none"; // Hide the answer container
+    answerContainer.style.display = "none";
     currentQuestionIndex++;
     showQuestion();
     updateProgressBar();

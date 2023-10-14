@@ -29,10 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
     var categorySpan = document.getElementById("categorySpan");
 
     if (categorySpan) {
-        var zmienna = categorySpan.textContent; // Pobierz tekst z categorySpan
+        var zmienna = categorySpan.textContent; 
 
         przyciski.forEach(function(przycisk) {
-            przycisk.setAttribute("data-variable", zmienna); // Ustaw wartość atrybutu data-variable
+            przycisk.setAttribute("data-variable", zmienna);
         });
 
         localStorage.setItem("zmienna", zmienna);
