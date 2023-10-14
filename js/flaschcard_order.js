@@ -70,7 +70,7 @@ function updateProgressBar() {
   const progressBar = document.getElementById("progress-bar");
   const progress = ((currentQuestionIndex ) / flashcards.length) * 100; 
   progressBar.style.width = progress + "%"; 
-  document.getElementById("abc").innerHTML =   + (currentQuestionIndex) + '/' + flashcards.length;
+  document.getElementById("abc").innerHTML ="Ukończono "   + (currentQuestionIndex) + '/' + flashcards.length;
 
 }
 
