@@ -12,12 +12,13 @@
 <body class ="white lighten-4">
   <nav>
     <div class="nav-wrapper container">
-        <button id="chooseCategoryButton" class="waves-effect waves-light btn">
+      <button id="chooseCategoryButton" class="waves-effect waves-light btn">
         <i class="material-icons">keyboard_backspace</i>
-        </button>
-      <a href="/"><span>JAVASCRIPT</span></a>
+      </button>
+      <a href="/"><span id="categorySpan"></span></a>
     </div>
   </nav>
+  
 
   <div class="container black-text text-darken-1">
     <div class="card-panel white row">
@@ -30,9 +31,9 @@
       <button class="category-button" onclick="goToPage('/pages/interview/javascript.html')">INTERVIEW</button>
     </div>
   </div>
-
-  
+  <script src="/js/redirect.js"></script>  
   <script src="/js/back_arrows/ui.js"></script>
   <script src="/js/back_arrows/ui3.js"></script>
+
 </body>
 </html>

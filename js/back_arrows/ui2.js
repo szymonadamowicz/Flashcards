@@ -1,4 +1,4 @@
 function redirectToCategory() {
     window.location.href = "/index.html";
   }
-  document.getElementById("chooseCategory").addEventListener("click", redirectToCategory);
+  document.getElementById("chooseCategoryButton").addEventListener("click", redirectToCategory);

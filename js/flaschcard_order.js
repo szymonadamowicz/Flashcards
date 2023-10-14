@@ -128,4 +128,3 @@ document.getElementById("prevQuestionButton").addEventListener("click", prevQues
 document.getElementById("nextQuestionButton").addEventListener("click", nextQuestion);
 document.getElementById("chooseCategoryButton").addEventListener("click", redirectToIndex);
 window.addEventListener("load", fetchFlashcards);
-
