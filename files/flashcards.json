@@ -1,5 +1,5 @@
-{
-  "javascript": [
+
+   [
     {
       "question": "Co to jest JavaScript?",
       "answer": "JavaScript to język programowania stosowany do tworzenia interaktywnych stron internetowych."
@@ -18,118 +18,8 @@
     },
     {
       "question": "Co to jest funkcja w JavaScript i jak ją zdefiniować?",
-      "answer": "Funkcja w JavaScript to zestaw instrukcji, które można wywołać wielokrotnie w kodzie. Definiujemy funkcję używając słowa kluczowego 'function'."
-    }
-  ],
-  "react":[
-    {
-      "question": "Co to jest React?",
-      "answer": "React to biblioteka JavaScript do budowania interfejsów użytkownika."
-    },
-    {
-      "question": "Jakie są podstawowe zalety Reacta?",
-      "answer": "Podstawowe zalety Reacta to wirtualny DOM, komponenty, jednokierunkowy przepływ danych i narzędzia do debugowania."
-    },
-    {
-      "question": "Jak tworzy się komponenty w React?",
-      "answer": "Komponenty w React tworzy się za pomocą klas lub funkcji. Komponenty klasowe dziedziczą po klasie `React.Component`, a komponenty funkcyjne to funkcje zwracające JSX."
-    },
-    {
-      "question": "Co to jest stan (state) w komponencie React?",
-      "answer": "Stan (state) w komponencie React to obiekt, który przechowuje dane, które mogą zmieniać się w trakcie działania komponentu. Zmiany stanu powodują ponowne renderowanie komponentu."
-    },
-    {
-      "question": "Jakie są cykle życia komponentu React?",
-      "answer": "Cykle życia komponentu React to sekwencja zdarzeń, które zachodzą od momentu utworzenia komponentu do jego usunięcia. Przykładowe metody cyklu życia to `componentDidMount`, `componentDidUpdate` i `componentWillUnmount`."
-    }
-  ],
-  "angular":[
-    {
-      "question": "Co to jest Angular?",
-      "answer": "Angular to platforma i framework do tworzenia aplikacji internetowych opartych na języku TypeScript."
-    },
-    {
-      "question": "Jakie są główne cechy Angulara?",
-      "answer": "Główne cechy Angulara to dwukierunkowe wiązanie danych, modułowość, dependency injection, komponenty i narzędzia do testowania."
-    },
-    {
-      "question": "Jakie są podstawowe komponenty struktury Angulara?",
-      "answer": "Podstawowe komponenty struktury Angulara to komponenty, usługi, moduły i szablony (templates)."
-    },
-    {
-      "question": "Jakie jest znaczenie dwukierunkowego wiązania danych w Angularze?",
-      "answer": "Dwukierunkowe wiązanie danych w Angularze umożliwia automatyczną synchronizację danych między modelem a widokiem. Zmiana danych w modelu jest odzwierciedlana w widoku i na odwrót."
-    },
-    {
-      "question": "Co to jest dependency injection (DI) w Angularze?",
-      "answer": "Dependency Injection (DI) to mechanizm w Angularze, który umożliwia wstrzykiwanie zależności (np. usług) do komponentów. Ułatwia to zarządzanie zależnościami i testowanie komponentów."
-    }
-  ],
-  "C#":[
-    {
-      "question": "Co to jest język C#?",
-      "answer": "C# to obiektowy język programowania stworzony przez Microsoft. Jest często wykorzystywany do tworzenia aplikacji na platformę .NET."
-    },
-    {
-      "question": "Jak definiuje się zmienne w C#?",
-      "answer": "Zmienne w C# definiuje się za pomocą deklaracji, podając typ zmiennej, jej nazwę i opcjonalnie inicjalizując ją wartością. Na przykład: int liczba = 42;"
-    },
-    {
-      "question": "Co to jest dziedziczenie (inheritance) w języku C#?",
-      "answer": "Dziedziczenie w C# to mechanizm, który pozwala na tworzenie nowych klas (pochodnych) na bazie istniejących klas (bazowych). Pochodne klasy dziedziczą zachowanie i cechy bazowej klasy."
-    },
-    {
-      "question": "Co to jest interfejs (interface) w języku C#?",
-      "answer": "Interfejs w C# to abstrakcyjna deklaracja, która definiuje zestaw metod, które klasa musi zaimplementować. Klasy mogą implementować wiele interfejsów."
-    },
-    {
-      "question": "Jak obsługuje się wyjątki (exceptions) w języku C#?",
-      "answer": "Wyjątki w C# obsługuje się za pomocą bloków try-catch. Kod, który może generować wyjątek, jest umieszczony w bloku try, a obsługa wyjątku znajduje się w bloku catch."
-    }
-  ],
-  "node.js":[
-    {
-      "question": "Co to jest Node.js?",
-      "answer": "Node.js to środowisko uruchomieniowe JavaScript oparte na silniku V8, stworzone przez Google. Jest używane do tworzenia aplikacji serwerowych i skryptów po stronie serwera."
-    },
-    {
-      "question": "Jakie są główne zalety Node.js?",
-      "answer": "Główne zalety Node.js to jednonitkowość, efektywność w obsłudze operacji we/wy (I/O), duże zasoby bibliotek i modułów, a także jednolity język programowania (JavaScript) na stronie klienta i serwerze."
-    },
-    {
-      "question": "Jakie jest główne zastosowanie Node.js?",
-      "answer": "Node.js jest często wykorzystywane do tworzenia serwerów HTTP, aplikacji sieciowych (np. czatów w czasie rzeczywistym), mikroserwisów i narzędzi do automatyzacji zadań."
-    },
-    {
-      "question": "Co to są moduły w Node.js?",
-      "answer": "Moduły w Node.js to odizolowane części kodu, które pozwalają na organizację i ponowne wykorzystywanie funkcjonalności. Node.js używa modułów do ładowania funkcji, zmiennych i obiektów."
-    },
-    {
-      "question": "Jakie narzędzia dostępne są do zarządzania zależnościami w projektach Node.js?",
-      "answer": "W projekcie Node.js można użyć narzędzi takich jak npm (Node Package Manager) lub Yarn do zarządzania zależnościami, instalowania pakietów i budowy projektu."
-    }
-  ],
-  "php":[
-    {
-      "question": "Co to jest PHP?",
-      "answer": "PHP to skryptowy język programowania używany do tworzenia stron internetowych i aplikacji webowych. Skrót oznacza 'Hypertext Preprocessor'."
-    },
-    {
-      "question": "Jak deklaruje się zmienną w PHP?",
-      "answer": "Zmienną w PHP deklaruje się poprzez umieszczenie znaku dolara ('$') przed nazwą zmiennej. Na przykład: $zmienna = 42;"
-    },
-    {
-      "question": "Co to są tablice w PHP?",
-      "answer": "Tablice w PHP to struktury danych, które przechowują wiele wartości w jednej zmiennej. Mogą być indeksowane numerycznie lub za pomocą nazw kluczowych."
-    },
-    {
-      "question": "Co to jest sesja (session) w PHP?",
-      "answer": "Sesja w PHP to mechanizm, który umożliwia przechowywanie danych na serwerze, aby identyfikować użytkownika między różnymi stronami. Służy do zarządzania stanem logowania i innymi informacjami o użytkowniku."
-    },
-    {
-      "question": "Jakie są metody przesyłania danych w formularzach w PHP?",
-      "answer": "W PHP dane z formularzy mogą być przesyłane za pomocą metod GET lub POST. Metoda GET przesyła dane jako część URL, podczas gdy metoda POST przesyła dane w ciele żądania HTTP."
-    }
+      "answer": "Sesja w PHP to mechanizm, który umożliwia przechowywanie danych na serwerze, aby identyfikować użytkownika między różnymi stronami. Służy do zarządzania stanem logowania i innymi informacjami o użytkowniku."    }
+  
   ]
-}
+
 

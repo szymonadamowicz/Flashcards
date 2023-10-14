@@ -70,8 +70,32 @@ function updateProgressBar() {
   const progressBar = document.getElementById("progress-bar");
   const progress = ((currentQuestionIndex ) / flashcards.length) * 100; 
   progressBar.style.width = progress + "%"; 
-  document.getElementById("abc").innerHTML = "Progres Bar " + (currentQuestionIndex) + '/' + flashcards.length;
+  document.getElementById("abc").innerHTML =   + (currentQuestionIndex) + '/' + flashcards.length;
 
+}
+
+var answerVisible = false;
+
+// Funkcja do przełączania widoczności odpowiedzi
+function toggleAnswer() {
+  var answerContainer = document.getElementById("answer-container");
+  var questionContainer = document.getElementById("question-container");
+
+  if (!answerVisible) {
+    answerContainer.style.display = "block"; // Wyświetl odpowiedź
+    questionContainer.style.display = "none"; // Ukryj pytanie
+    answerVisible = true;
+  } else {
+    answerContainer.style.display = "none"; // Ukryj odpowiedź
+    questionContainer.style.display = "block"; // Wyświetl pytanie
+    answerVisible = false;
+  }
+}
+
+// Dodaj nasłuchiwanie zdarzenia kliknięcia
+var answerContainer = document.getElementById("answer-container");
+if (answerContainer) {
+  answerContainer.addEventListener("click", toggleAnswer);
 }
 
 

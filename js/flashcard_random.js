@@ -65,7 +65,7 @@ function updateProgressBar() {
   var progressBar = document.getElementById("progress-bar");
   var progress = ((questionCount ) / flashcards.length) * 100;
   progressBar.style.width = progress + "%";
-  document.getElementById("acb").innerHTML = "Progres Bar " + (questionCount) + '/' + (flashcards.length);
+  document.getElementById("acb").innerHTML = "Ukończono " + (questionCount) + '/' + (flashcards.length);
   questionCount ++
 }
 
