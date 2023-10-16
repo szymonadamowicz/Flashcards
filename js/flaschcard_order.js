@@ -1,17 +1,20 @@
 var flashcards;
 var currentQuestionIndex = 0;
 
-
-function fetchFlashcards() {
+var category = "JAVASCRIPT"
+function fetchFlashcards(category) {
   fetch('/files/flashcards.json')
     .then(response => response.json())
     .then(data => {
-      flashcards = data;
-      showQuestion();
+      if (data[category]) {
+        flashcards = data[category];
+        showQuestion();
+      } else {
+        console.error('Kategoria nie istnieje w pliku JSON:', category);
+      }
     })
     .catch(error => console.error('Błąd pobierania danych z pliku JSON:', error));
 }
-
 
 function showQuestion() {
   var flashcardButton = document.getElementById("question-container");
@@ -126,4 +129,4 @@ function redirectToIndex() {
 document.getElementById("prevQuestionButton").addEventListener("click", prevQuestion);
 document.getElementById("nextQuestionButton").addEventListener("click", nextQuestion);
 document.getElementById("chooseCategoryButton").addEventListener("click", redirectToIndex);
-window.addEventListener("load", fetchFlashcards);
+window.addEventListener("load", fetchFlashcards(category));
