@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var przyciski = document.querySelectorAll(".category-button");
+    var buttons = document.querySelectorAll(".category-button");
 
-    przyciski.forEach(function(przycisk) {
-        przycisk.addEventListener("click", function() {
-            var zmienna = przycisk.getAttribute("data-variable");
-            localStorage.setItem("zmienna", zmienna);
+    buttons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            var title = button.getAttribute("data-variable");
+            localStorage.setItem("title", title);
         });
     });
 });
@@ -12,12 +12,12 @@ document.addEventListener("DOMContentLoaded", function() {
     var categorySpan = document.getElementById("categorySpan");
     
     if (categorySpan) {
-        var zmienna = localStorage.getItem("zmienna");
+        var title = localStorage.getItem("title");
 
-        if (zmienna) {
-            console.log("Przekazana zmienna: " + zmienna);
+        if (title) {
+            console.log("Przekazana zmienna: " + title);
 
-            categorySpan.textContent = zmienna;
+            categorySpan.textContent = title;
         } else {
             console.log("Brak przekazanej zmiennej.");
         }
@@ -25,16 +25,18 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    var przyciski = document.querySelectorAll(".category-button");
+    var buttons = document.querySelectorAll(".category-button");
     var categorySpan = document.getElementById("categorySpan");
 
     if (categorySpan) {
-        var zmienna = categorySpan.textContent; 
+        var title = categorySpan.textContent; 
 
-        przyciski.forEach(function(przycisk) {
-            przycisk.setAttribute("data-variable", zmienna);
+        buttons.forEach(function(button) {
+            button.setAttribute("data-variable", title);
         });
 
-        localStorage.setItem("zmienna", zmienna);
+        localStorage.setItem("title", title);
     }
 });
+
+zmienna

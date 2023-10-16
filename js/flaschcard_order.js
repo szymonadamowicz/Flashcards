@@ -4,10 +4,10 @@ var currentQuestionIndex = 0;
 document.addEventListener("DOMContentLoaded", function() {
   var categorySpan = document.getElementById("categorySpan");
 
-  var zmienna = localStorage.getItem("zmienna");
+  var title = localStorage.getItem("title");
 
-  if (zmienna) {
-    categorySpan.textContent = zmienna;
+  if (title) {
+    categorySpan.textContent = title;
   } else {
     console.log("Brak przekazanej zmiennej.");
   }
