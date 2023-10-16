@@ -1,20 +1,35 @@
 var flashcards;
 var currentQuestionIndex = 0;
 
-var category = "JAVASCRIPT"
-function fetchFlashcards(category) {
-  fetch('/files/flashcards.json')
-    .then(response => response.json())
-    .then(data => {
-      if (data[category]) {
-        flashcards = data[category];
-        showQuestion();
-      } else {
-        console.error('Kategoria nie istnieje w pliku JSON:', category);
-      }
-    })
-    .catch(error => console.error('Błąd pobierania danych z pliku JSON:', error));
-}
+document.addEventListener("DOMContentLoaded", function() {
+  var categorySpan = document.getElementById("categorySpan");
+
+  var zmienna = localStorage.getItem("zmienna");
+
+  if (zmienna) {
+    categorySpan.textContent = zmienna;
+  } else {
+    console.log("Brak przekazanej zmiennej.");
+  }
+
+  var category = categorySpan.textContent;
+
+  function fetchFlashcards(category) {
+    fetch('/files/flashcards.json')
+      .then(response => response.json())
+      .then(data => {
+        if (data[category]) {
+          flashcards = data[category];
+          showQuestion();
+        } else {
+          console.error('Kategoria nie istnieje w pliku JSON:', category);
+        }
+      })
+      .catch(error => console.error('Błąd pobierania danych z pliku JSON:', error));
+  }
+  window.addEventListener("load", fetchFlashcards(category));
+});
+
 
 function showQuestion() {
   var flashcardButton = document.getElementById("question-container");
@@ -129,4 +144,3 @@ function redirectToIndex() {
 document.getElementById("prevQuestionButton").addEventListener("click", prevQuestion);
 document.getElementById("nextQuestionButton").addEventListener("click", nextQuestion);
 document.getElementById("chooseCategoryButton").addEventListener("click", redirectToIndex);
-window.addEventListener("load", fetchFlashcards(category));
