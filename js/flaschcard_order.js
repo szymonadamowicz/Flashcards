@@ -119,7 +119,7 @@ function prevQuestion() {
 
 
 function redirectToIndex() {
-  window.location.href = "/../pages/languages/javascript.html";
+  window.location.href = "/../pages/languages.html";
 }
 
 

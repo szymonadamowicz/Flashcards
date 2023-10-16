@@ -75,7 +75,7 @@ function nextQuestion() {
 }
 
 function redirectToIndex() {
-  window.location.href = "/../pages/languages/javascript.html";
+  window.location.href = "/../pages/languages.html";
 }
 
 window.addEventListener("load", fetchFlashcards);

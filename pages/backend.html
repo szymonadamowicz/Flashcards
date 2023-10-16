@@ -13,26 +13,30 @@
   <nav>
     <div class="nav-wrapper container">
       <button id="chooseCategoryButton" class="waves-effect waves-light btn">
-        <i class="material-icons">keyboard_backspace</i>
+      <i class="material-icons">keyboard_backspace</i>
       </button>
-      <a href="/"><span id="categorySpan"></span></a>
+      <a id="BACK-END-TITLE" href="/"><span>BACK-END</span></a>
     </div>
   </nav>
-  
 
   <div class="container black-text text-darken-1">
     <div class="card-panel white row">
-      <button class="category-button" onclick="goToPage('/pages/learning/javascript.html')">NAUKA</button>
+      <button class="category-button" data-variable="C#" onclick="goToPage('/pages/languages.html ')">C#</button>
     </div>
   </div>
-
   <div class="container black-text text-darken-1">
     <div class="card-panel white row">
-      <button class="category-button" onclick="goToPage('/pages/interview/javascript.html')">INTERVIEW</button>
+      <button class="category-button" data-variable="NODE" onclick="goToPage('/pages/languages.html ')">NODE</button>
     </div>
   </div>
-  <script src="/js/redirect.js"></script>  
+  <div class="container black-text text-darken-1">
+    <div class="card-panel white row">
+      <button class="category-button" data-variable="PHP" onclick="goToPage('/pages/languages.html ')">PHP</button>
+    </div>
+  </div>
+  <script src="/js/redirect.js"></script>
   <script src="/js/back_arrows/ui.js"></script>
+  <script src="/js/back_arrows/ui2.js"></script>
   <script src="/js/back_arrows/ui3.js"></script>
 
 </body>
