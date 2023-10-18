@@ -28,7 +28,16 @@ nav {
   background-color: #ffffff;
   border: none;
 }
-
+.mode-button {
+  font-size: 20px;
+  color: rgb(9, 27, 93);
+  font-weight: bold;
+  text-align: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #ffffff;
+  border: none;
+}
 
 .category-button:focus {     
   background-color:white;    
@@ -59,12 +68,6 @@ nav {
   border: none;
 }
 
-.material-icons{
-  display: table-cell !important;
-  vertical-align: middle;
-  line-height:0 !important;
-  height:100% !important;
-}
 
 #chooseCategoryButton {
   background-color: rgb(9, 27, 93);
@@ -73,13 +76,17 @@ nav {
   top: 9.5px;
   left: 10px;
 }
-
+.material-icons{
+    display: inline-flex;
+    vertical-align: top;
+}
 
 
 #nextQuestionButton {
   background-color: rgb(9, 27, 93);
   margin-bottom: auto;
   margin-right: auto;
+    
  }
 
 #prevQuestionButton{
@@ -144,4 +151,5 @@ nav {
   padding-left: 40px;
   padding-right: 40px;
   text-align: center;
+  
 }

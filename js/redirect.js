@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
-    var buttons = document.querySelectorAll(".category-button");
+    var containers = document.querySelectorAll(".category-link");
 
-    buttons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            var title = button.getAttribute("data-variable");
+    containers.forEach(function(container) {
+        container.addEventListener("click", function() {
+            var title = container.querySelector(".card-panel").textContent.trim(); // Używamy trim() do usunięcia białych znaków
             localStorage.setItem("title", title);
         });
     });
 });
+
 document.addEventListener("DOMContentLoaded", function() {
     var categorySpan = document.getElementById("categorySpan");
     
@@ -24,8 +25,9 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+
 document.addEventListener("DOMContentLoaded", function() {
-    var buttons = document.querySelectorAll(".category-button");
+    var buttons = document.querySelectorAll(".category-link");
     var categorySpan = document.getElementById("categorySpan");
 
     if (categorySpan) {
@@ -38,5 +40,3 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem("title", title);
     }
 });
-
-zmienna

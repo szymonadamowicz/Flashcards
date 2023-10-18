@@ -32,57 +32,46 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function showQuestion() {
-  var flashcardButton = document.getElementById("question-container");
   var questionContainer = document.getElementById("question-container");
   var answerContainer = document.getElementById("answer-container");
 
   if (currentQuestionIndex == 0) {
     var prevQuestionButton = document.getElementById("prevQuestionButton");
-    prevQuestionButton.disabled = true;
+    prevQuestionButton.style.opacity = 0.1;
+    prevQuestionButton.style.pointerEvents = "none"
 
   } else {
     var prevQuestionButton = document.getElementById("prevQuestionButton");
+    prevQuestionButton.style.opacity = 1;
     prevQuestionButton.style.display = "inline-block";
-    prevQuestionButton.disabled = false;
+    prevQuestionButton.style.pointerEvents = "unset"
   }
 
   if (currentQuestionIndex < flashcards.length) {
     var randomQuestion = flashcards[currentQuestionIndex].question;
     var randomAnswer = flashcards[currentQuestionIndex].answer;
 
-    flashcardButton.style.display = "none";
     questionContainer.innerHTML = randomQuestion;
+    nextQuestionButton.style.opacity = 1;
+    nextQuestionButton.style.pointerEvents = "unset";
+    questionContainer.style.pointerEvents = "unset";
     questionContainer.style.display = "block";
     answerContainer.style.display = "none";
 
     questionContainer.onclick = function () {
-      questionContainer.style.display = "none";
       answerContainer.innerHTML = randomAnswer;
       answerContainer.style.display = "block";
     };
+
   } else {
-    questionContainer.style.display = "block";
     questionContainer.innerHTML = "Nie ma więcej pytań.";
-    questionContainer.onclick = console.log();
-    questionContainer.disabled = "false";
-
-  }
-
-  if (currentQuestionIndex == flashcards.length) {
-    var nextQuestionButton = document.getElementById("nextQuestionButton");
-    nextQuestionButton.disabled = true;
-    var help = document.getElementById("help");
-    help.style.visibility = "hidden";
-  } else {
-    var nextQuestionButton = document.getElementById("nextQuestionButton");
-    nextQuestionButton.style.display = "inline-block";
-    nextQuestionButton.disabled = false;
-    var help = document.getElementById("help");
-    help.style.visibility = "visible";
+    questionContainer.style.pointerEvents = "none";
+    nextQuestionButton.style.opacity = 0.1;
+    nextQuestionButton.style.pointerEvents = "none";
+    answerContainer.style.display = "none"; // Dodaj tę linię, aby ukryć odpowiedź
   }
   updateProgressBar();
 }
-
 
 function updateProgressBar() {
   const progressBar = document.getElementById("progress-bar");
@@ -94,38 +83,24 @@ function updateProgressBar() {
 
 var answerVisible = false;
 
-
 function toggleAnswer() {
   var answerContainer = document.getElementById("answer-container");
-  var questionContainer = document.getElementById("question-container");
-
   if (!answerVisible) {
-    answerContainer.style.display = "block";
-    questionContainer.style.display = "none";
-    answerVisible = true;
-  } else {
     answerContainer.style.display = "none";
-    questionContainer.style.display = "block";
-    answerVisible = false;
-  }
-}
+}}
 
 var answerContainer = document.getElementById("answer-container");
 if (answerContainer) {
   answerContainer.addEventListener("click", toggleAnswer);
 }
 
-
 function nextQuestion() {
   if (currentQuestionIndex < flashcards.length) {
-    var answerContainer = document.getElementById("answer-container");
-    answerContainer.style.display = "none";
     currentQuestionIndex++;
     showQuestion();
     updateProgressBar();
   }
 }
-
 
 function prevQuestion() {
   if (currentQuestionIndex > 0) {
@@ -135,11 +110,9 @@ function prevQuestion() {
   }
 }
 
-
 function redirectToIndex() {
   window.location.href = "/../pages/languages.html";
 }
-
 
 document.getElementById("prevQuestionButton").addEventListener("click", prevQuestion);
 document.getElementById("nextQuestionButton").addEventListener("click", nextQuestion);

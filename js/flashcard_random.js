@@ -34,19 +34,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function showQuestion() {
-  if (questionsUsed.length === flashcards.length) {
+  if (questionsUsed.length == flashcards.length) {
     var questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = "Nie ma więcej pytań.";
-    questionContainer.onclick = console.log();
-    questionContainer.disabled = "true";
-    questionContainer.style.display = "block";
-    document.getElementById("nextQuestionButton");
-    nextQuestionButton.disabled = true;
+    questionContainer.style.pointerEvents = "none";
+    nextQuestionButton.style.opacity = 0.1;
+    nextQuestionButton.style.pointerEvents = "none";
     var help = document.getElementById("help");
     help.style.visibility = "hidden";
     var answerContainer = document.getElementById("answer-container");
-    answerContainer.innerHTML = "";
-    answerContainer.style.display = "none";
   } else {
     var newIndex;
     do {
@@ -55,32 +51,37 @@ function showQuestion() {
     var help = document.getElementById("help");
     help.style.display = "block";
     questionsUsed.push(newIndex);
-  
+
     var randomQuestion = flashcards[newIndex].question;
     var randomAnswer = flashcards[newIndex].answer;
-  
+
     var questionContainer = document.getElementById("question-container");
     var answerContainer = document.getElementById("answer-container");
-  
-    questionContainer.innerHTML = randomQuestion;
+
+    
     questionContainer.style.display = "block";
     answerContainer.style.display = "none";
-  
+    questionContainer.innerHTML = randomQuestion;
+
     questionContainer.onclick = function () {
-      questionContainer.style.display = "none"; 
-      answerContainer.innerHTML = randomAnswer;
+      questionContainer.style.display = "none";
       answerContainer.style.display = "block";
+      answerContainer.innerHTML = randomAnswer;
+    };
+
+    answerContainer.onclick = function () {
+      answerContainer.style.display = "none";
+      questionContainer.innerHTML = randomQuestion;
+      questionContainer.style.display = "block";
     };
   }
   updateProgressBar();
-
+  questionContainer.style.display = "block";
+  answerContainer.style.display = "none";
 }
 
 function updateProgressBar() {
-  
-  if (document.getElementById("question-container").innerText == "Nie ma więcej pytań."){
-    progress = 100;
-  }
+
   var progressBar = document.getElementById("progress-bar");
   var progress = ((questionCount ) / flashcards.length) * 100;
   progressBar.style.width = progress + "%";

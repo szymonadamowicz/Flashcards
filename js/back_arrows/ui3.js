@@ -16,9 +16,9 @@
   document.getElementById("chooseCategoryButton").addEventListener("click", function () {
     if ((document.getElementById("categorySpan").textContent === "JAVASCRIPT" || document.getElementById("categorySpan").textContent === "REACT" || document.getElementById("categorySpan").textContent === "ANGULAR") && localStorage.getItem("x") == 3) {
       window.location.href = "frontend.html";
-    } else if ((document.getElementById("categorySpan").textContent === "C#" || document.getElementById("categorySpan").textContent === "NODE" || document.getElementById("categorySpan").textContent === "PHP") && localStorage.getItem("x") == 3) {
+    } else if ((document.getElementById("categorySpan").textContent === "C#" || document.getElementById("categorySpan").textContent === "NODE.JS" || document.getElementById("categorySpan").textContent === "PHP") && localStorage.getItem("x") == 3) {
       window.location.href = "backend.html";
-    } else if ((document.getElementById("categorySpan").textContent === "JAVASCRIPT" || document.getElementById("categorySpan").textContent === "REACT" || document.getElementById("categorySpan").textContent === "ANGULAR" || document.getElementById("categorySpan").textContent === "C#" || document.getElementById("categorySpan").textContent === "NODE" || document.getElementById("categorySpan").textContent === "PHP") && localStorage.getItem("x") == 6) {
+    } else if ((document.getElementById("categorySpan").textContent === "JAVASCRIPT" || document.getElementById("categorySpan").textContent === "REACT" || document.getElementById("categorySpan").textContent === "ANGULAR" || document.getElementById("categorySpan").textContent === "C#" || document.getElementById("categorySpan").textContent === "NODE.JS" || document.getElementById("categorySpan").textContent === "PHP") && localStorage.getItem("x") == 6) {
       window.location.href = "fullstack.html";
     }
   });
