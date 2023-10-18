@@ -1,12 +1,23 @@
 var flashcards;
-var currentQuestionIndex = -1; 
+var currentQuestionIndex = -1;
 var questionsUsed = [];
 var questionCount = 0;
 
-document.addEventListener("DOMContentLoaded", function() {
-  var categorySpan = document.getElementById("categorySpan");
+var categorySpan;
+var title;
+var category;
 
-  var title = localStorage.getItem("title");
+var questionContainer;
+var answerContainer;
+var nextQuestionButton;
+
+document.addEventListener("DOMContentLoaded", function () {
+  categorySpan = document.getElementById("categorySpan");
+  title = localStorage.getItem("title");
+
+  questionContainer = document.getElementById("question-container");
+  answerContainer = document.getElementById("answer-container");
+  nextQuestionButton = document.getElementById("nextQuestionButton");
 
   if (title) {
     categorySpan.textContent = title;
@@ -14,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
     console.log("Brak przekazanej zmiennej.");
   }
 
-  var category = categorySpan.textContent;
+  category = categorySpan.textContent;
 
   function fetchFlashcards(category) {
     fetch('/files/flashcards.json')
@@ -29,20 +40,22 @@ document.addEventListener("DOMContentLoaded", function() {
       })
       .catch(error => console.error('Błąd pobierania danych z pliku JSON:', error));
   }
-  window.addEventListener("load", fetchFlashcards(category));
-});
 
+  window.addEventListener("load", function () {
+    fetchFlashcards(category);
+  });
+});
 
 function showQuestion() {
   if (questionsUsed.length == flashcards.length) {
-    var questionContainer = document.getElementById("question-container");
+    questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = "Nie ma więcej pytań.";
     questionContainer.style.pointerEvents = "none";
     nextQuestionButton.style.opacity = 0.1;
     nextQuestionButton.style.pointerEvents = "none";
     var help = document.getElementById("help");
     help.style.visibility = "hidden";
-    var answerContainer = document.getElementById("answer-container");
+    answerContainer = document.getElementById("answer-container");
   } else {
     var newIndex;
     do {
@@ -55,10 +68,9 @@ function showQuestion() {
     var randomQuestion = flashcards[newIndex].question;
     var randomAnswer = flashcards[newIndex].answer;
 
-    var questionContainer = document.getElementById("question-container");
-    var answerContainer = document.getElementById("answer-container");
+    questionContainer = document.getElementById("question-container");
+    answerContainer = document.getElementById("answer-container");
 
-    
     questionContainer.style.display = "block";
     answerContainer.style.display = "none";
     questionContainer.innerHTML = randomQuestion;
@@ -81,14 +93,12 @@ function showQuestion() {
 }
 
 function updateProgressBar() {
-
   var progressBar = document.getElementById("progress-bar");
-  var progress = ((questionCount ) / flashcards.length) * 100;
+  var progress = ((questionCount) / flashcards.length) * 100;
   progressBar.style.width = progress + "%";
   document.getElementById("acb").innerHTML = "Ukończono " + (questionCount) + '/' + (flashcards.length);
-  questionCount ++
+  questionCount++;
 }
-
 
 function nextQuestion() {
   showQuestion();
@@ -97,6 +107,3 @@ function nextQuestion() {
 function redirectToIndex() {
   window.location.href = "/../pages/languages.html";
 }
-
-document.getElementById("nextQuestionButton").addEventListener("click", nextQuestion);
-document.getElementById("chooseCategoryButton").addEventListener("click", redirectToIndex);

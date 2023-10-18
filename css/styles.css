@@ -76,9 +76,8 @@ nav {
   top: 9.5px;
   left: 10px;
 }
-.material-icons{
-    display: inline-flex;
-    vertical-align: top;
+i.material-icons {
+  line-height: unset !important;
 }
 
 

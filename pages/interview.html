@@ -8,21 +8,31 @@
   <link type="text/css" href="/css/styles.css" rel="stylesheet">
   <script type="text/javascript" src="/js/materialize.min.js"></script>
   <link rel="manifest" href="/manifest.json">
+    <script src="/js/flashcard_random.js"></script>
+  <script src="/js/utils.js"></script>
+  <script>
+    var nextQuestionButton = document.getElementById("nextQuestionButton");
+    var chooseCategoryButton = document.getElementById("chooseCategoryButton");
+
+    nextQuestionButton.addEventListener("click", nextQuestion);
+    chooseCategoryButton.addEventListener("click", redirectToIndex);
+    ;
+  </script>
 </head>
-<body class ="white lighten-4">
+<body class="white lighten-4">
   <nav>
     <div class="nav-wrapper container">
-      <button id="chooseCategoryButton" class="waves-effect waves-light btn">
+      <a id="chooseCategoryButton" class="waves-effect waves-light btn" href="languages.html">
         <i class="material-icons">keyboard_backspace</i>
-      </button>
+      </a>
       <a id="categorySpan" href="/"><span></span></a>
     </div>
   </nav>
-  <div class = "progress-bar-placement">
-    <p id = "acb" class="progress-title">Ukończono: </p>
+  <div class="progress-bar-placement">
+    <p id="acb" class="progress-title">Ukończono: </p>
     <div class="progress">
       <div class="determinate" id="progress-bar" style="width: 0%;"></div>
-    </div>    
+    </div>
   </div>
 
   <div class="container-outer">
@@ -34,14 +44,9 @@
     </div>
   </div>
 
-    <div class="next-previous-button">
-        
-      <p id="help">Kliknij w fiszkę aby zobaczyć odpowiedź!</p>
-      <a id="nextQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_right</i></a>
-      
-    </div>
-
-  <script src="/js/redirect.js"></script>
-  <script src="/js/flashcard_random.js"></script>
+  <div class="next-previous-button">
+    <p id="help">Kliknij w fiszkę, aby zobaczyć odpowiedź!</p>
+    <a id="nextQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_right</i></a>
+  </div>
 </body>
 </html>

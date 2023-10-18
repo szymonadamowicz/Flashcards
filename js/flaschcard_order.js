@@ -64,8 +64,8 @@ function showQuestion() {
       answerContainer.innerHTML = randomAnswer;
       answerContainer.style.display = "block";
     }
-    
   } else {
+    questionContainer.style.display = "block";
     questionContainer.innerHTML = "Nie ma więcej pytań.";
     questionContainer.style.pointerEvents = "none";
     nextQuestionButton.style.opacity = 0.1;
@@ -74,6 +74,7 @@ function showQuestion() {
   }
   updateProgressBar();
 }
+
 
 function updateProgressBar() {
   const progressBar = document.getElementById("progress-bar");
@@ -106,10 +107,5 @@ function prevQuestion() {
 }
 
 function redirectToIndex() {
-  window.location.href = "/../pages/languages.html";
+  window.location.href = "./pages/languages.html";
 }
-
-document.getElementById("prevQuestionButton").addEventListener("click", prevQuestion);
-document.getElementById("nextQuestionButton").addEventListener("click", nextQuestion);
-document.getElementById("chooseCategoryButton").addEventListener("click", redirectToIndex);
-document.getElementById("question-container").addEventListener("click", toggleAnswer);

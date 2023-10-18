@@ -8,42 +8,42 @@
   <link type="text/css" href="/css/styles.css" rel="stylesheet">
   <script type="text/javascript" src="/js/materialize.min.js"></script>
   <link rel="manifest" href="/manifest.json">
+  <script src="/js/flaschcard_order.js"></script>
+  <script src="/js/utils.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("chooseCategoryButton").addEventListener("click", redirectToIndex);
+    document.getElementById("question-container").addEventListener("click", toggleAnswer);
+    });
+  </script>
 </head>
-<body class ="white lighten-4">
+<body class="white lighten-4">
   <nav>
     <div class="nav-wrapper container">
-      <a id="chooseCategoryButton" class="waves-effect waves-light btn">
+      <a id="chooseCategoryButton" class="waves-effect waves-light btn" href="languages.html">
         <i class="material-icons">keyboard_backspace</i>
       </a>
       <a id="categorySpan" href="/"><span></span></a>
     </div>
   </nav>
-  <div class = "progress-bar-placement">
-    <p id = "abc" class="progress-title">Ukończono: </p>
+  <div class="progress-bar-placement">
+    <p id="abc" class="progress-title">Ukończono: </p>
     <div class="progress">
       <div class="determinate" id="progress-bar" style="width: 0%;"></div>
     </div>    
   </div>
-
   <div class="container-outer">
     <div class="container-inner">
       <div class="card-panel white row">
         <div id="question-container"></div>
         <div id="answer-container" style="display: none;" onclick="toggleAnswer()"></div>     
-       </div>
+      </div>
     </div>
   </div>
-
-    <div class="next-previous-button">
-        
-      <p id="help">Kliknij w fiszkę aby zobaczyć odpowiedź!</p>
-      <a id="prevQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_left</i></a>
-      <a id="nextQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_right</i></a>
-      
-      
-    </div>
-
-<script src="/js/flaschcard_order.js"></script>
-<script src="/js/redirect.js"></script>
+  <div class="next-previous-button">
+    <p id="help">Kliknij w fiszkę aby zobaczyć odpowiedź!</p>
+    <a id="prevQuestionButton" class="waves-effect waves-light btn" onclick="prevQuestion()"><i class="material-icons">keyboard_arrow_left</i></a>
+    <a id="nextQuestionButton" class="waves-effect waves-light btn" onclick="nextQuestion()"><i class="material-icons">keyboard_arrow_right</i></a>
+  </div>
 </body>
 </html>
