@@ -11,11 +11,13 @@
     <script src="/js/flashcard_random.js"></script>
   <script src="/js/utils.js"></script>
   <script>
-    var nextQuestionButton = document.getElementById("nextQuestionButton");
-    var chooseCategoryButton = document.getElementById("chooseCategoryButton");
+    document.addEventListener("DOMContentLoaded", function(){
+        var nextQuestionButton = document.getElementById("nextQuestionButton");
+        var chooseCategoryButton = document.getElementById("chooseCategoryButton");
 
-    nextQuestionButton.addEventListener("click", nextQuestion);
-    chooseCategoryButton.addEventListener("click", redirectToIndex);
+        nextQuestionButton.addEventListener("click", nextQuestion);
+        chooseCategoryButton.addEventListener("click", redirectToIndex);  
+    })
     ;
   </script>
 </head>

@@ -41,6 +41,9 @@ document.getElementById("chooseCategoryButton").addEventListener("click", functi
   }
 });
 });
+
+
+
 document.addEventListener("DOMContentLoaded", function() {
     var containers = document.querySelectorAll(".category-link");
 
