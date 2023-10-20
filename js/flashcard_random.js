@@ -1,15 +1,5 @@
-var flashcards;
-var currentQuestionIndex = -1;
 var questionsUsed = [];
 var questionCount = 0;
-
-var categorySpan;
-var title;
-var category;
-
-var questionContainer;
-var answerContainer;
-var nextQuestionButton;
 
 document.addEventListener("DOMContentLoaded", function () {
   categorySpan = document.getElementById("categorySpan");
@@ -47,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function showQuestion() {
+  
   if (questionsUsed.length == flashcards.length) {
     questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = "Nie ma więcej pytań.";
@@ -104,6 +95,4 @@ function nextQuestion() {
   showQuestion();
 }
 
-function redirectToIndex() {
-  window.location.href = "/../pages/languages.html";
-}
+

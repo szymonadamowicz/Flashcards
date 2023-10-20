@@ -1,4 +1,3 @@
-var flashcards;
 var currentQuestionIndex = 0;
 var answerVisible = false;
 
@@ -34,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function showQuestion() {
+  
   var questionContainer = document.getElementById("question-container");
   var answerContainer = document.getElementById("answer-container");
   var nextQuestionButton = document.getElementById("nextQuestionButton");
@@ -106,6 +106,3 @@ function prevQuestion() {
   }
 }
 
-function redirectToIndex() {
-  window.location.href = "./pages/languages.html";
-}
