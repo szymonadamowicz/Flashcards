@@ -13,8 +13,10 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("question-container").addEventListener("click", toggleAnswer);
+    
     });
   </script>
+
 </head>
 <body class="white lighten-4">
   <nav>
@@ -31,11 +33,11 @@
       <div class="determinate" id="progress-bar" style="width: 0%;"></div>
     </div>    
   </div>
-  <div class="container-outer">
-    <div class="container-inner">
-      <div class="card-panel white row">
-        <div id="question-container"></div>
-        <div id="answer-container" style="display: none;" onclick="toggleAnswer()"></div>     
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front" id="question-container">
+          </div>
+        <div class="flip-card-back" id="answer-container">
       </div>
     </div>
   </div>

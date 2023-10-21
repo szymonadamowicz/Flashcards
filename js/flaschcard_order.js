@@ -1,3 +1,4 @@
+var flashcards;
 var currentQuestionIndex = 0;
 var answerVisible = false;
 
@@ -30,10 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", function() {
     fetchFlashcards(category);
   });
+
+  const flipCard = document.querySelector('.flip-card');
+
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('is-flipped');
+  });
 });
 
 function showQuestion() {
-  
   var questionContainer = document.getElementById("question-container");
   var answerContainer = document.getElementById("answer-container");
   var nextQuestionButton = document.getElementById("nextQuestionButton");
@@ -58,9 +64,7 @@ function showQuestion() {
       nextQuestionButton.style.pointerEvents = "unset";
       questionContainer.style.pointerEvents = "unset";
       questionContainer.style.display = "block";
-      answerContainer.style.display = "none";
     } else {
-      questionContainer.style.display = "none";
       answerContainer.innerHTML = randomAnswer;
       answerContainer.style.display = "block";
     }
@@ -72,6 +76,7 @@ function showQuestion() {
     nextQuestionButton.style.pointerEvents = "none";
     answerContainer.style.display = "none";
   }
+  
   updateProgressBar();
 }
 
@@ -91,7 +96,7 @@ function toggleAnswer() {
 function nextQuestion() {
   if (currentQuestionIndex < flashcards.length) {
     currentQuestionIndex++;
-    answerVisible = false; 
+    answerVisible = false;
     showQuestion();
     updateProgressBar();
   }
@@ -105,4 +110,6 @@ function prevQuestion() {
     updateProgressBar();
   }
 }
-
+function redirectToIndex() {
+  window.location.href = "./pages/languages.html";
+}
