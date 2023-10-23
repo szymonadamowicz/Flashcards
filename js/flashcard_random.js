@@ -34,6 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("load", function () {
     fetchFlashcards(category);
   });
+  const flipCard = document.querySelector('.flip-card');
+
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('is-flipped');
+    toggleAnswer();
+  });
 });
 
 function showQuestion() {
@@ -67,20 +73,16 @@ function showQuestion() {
     questionContainer.innerHTML = randomQuestion;
 
     questionContainer.onclick = function () {
-      questionContainer.style.display = "none";
       answerContainer.style.display = "block";
       answerContainer.innerHTML = randomAnswer;
     };
 
     answerContainer.onclick = function () {
-      answerContainer.style.display = "none";
       questionContainer.innerHTML = randomQuestion;
       questionContainer.style.display = "block";
     };
   }
   updateProgressBar();
-  questionContainer.style.display = "block";
-  answerContainer.style.display = "none";
 }
 
 function updateProgressBar() {
@@ -92,6 +94,10 @@ function updateProgressBar() {
 }
 
 function nextQuestion() {
+  if (document.getElementsByClassName("is-flipped")) {
+    const flipCard = document.querySelector('.flip-card');
+    flipCard.classList.remove("is-flipped");
+  };
   showQuestion();
 }
 

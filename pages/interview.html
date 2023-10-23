@@ -10,17 +10,8 @@
   <link rel="manifest" href="/manifest.json">
     <script src="/js/flashcard_random.js"></script>
   <script src="/js/utils.js"></script>
-  <script>
-    document.addEventListener("DOMContentLoaded", function(){
-        var nextQuestionButton = document.getElementById("nextQuestionButton");
-        var chooseCategoryButton = document.getElementById("chooseCategoryButton");
-
-        nextQuestionButton.addEventListener("click", nextQuestion);
-    })
-    ;
-  </script>
 </head>
-<body class="white lighten-4">
+<body class="white lighten-4">  
   <nav>
     <div class="nav-wrapper container">
       <a id="chooseCategoryButton" class="waves-effect waves-light btn" href="languages.html">
@@ -36,18 +27,18 @@
     </div>
   </div>
 
-  <div class="container-outer">
-    <div class="container-inner">
-      <div class="card-panel white row">
-        <div id="question-container"></div>
-        <div id="answer-container" style="display: none;"></div>
-      </div>
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front" id="question-container">
+        </div>
+      <div class="flip-card-back" id="answer-container">
     </div>
   </div>
+</div>
 
   <div class="next-previous-button">
     <p id="help">Kliknij w fiszkę, aby zobaczyć odpowiedź!</p>
-    <a id="nextQuestionButton" class="waves-effect waves-light btn"><i class="material-icons">keyboard_arrow_right</i></a>
+    <a id="nextQuestionButton" class="waves-effect waves-light btn" onclick="nextQuestion()"><i class="material-icons">keyboard_arrow_right</i></a>
   </div>
 </body>
 </html>

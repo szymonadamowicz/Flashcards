@@ -36,6 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   flipCard.addEventListener('click', () => {
     flipCard.classList.toggle('is-flipped');
+    toggleAnswer();
   });
 });
 
@@ -55,7 +56,7 @@ function showQuestion() {
   }
 
   if (currentQuestionIndex < flashcards.length) {
-    var randomQuestion = flashcards[currentQuestionIndex].question;
+    var randomQuestion = flashcards[currentQuestionIndex].question; 
     var randomAnswer = flashcards[currentQuestionIndex].answer;
 
     if (!answerVisible) {
@@ -67,14 +68,14 @@ function showQuestion() {
     } else {
       answerContainer.innerHTML = randomAnswer;
       answerContainer.style.display = "block";
+      questionContainer.style.display = "block";
     }
+    
   } else {
-    questionContainer.style.display = "block";
     questionContainer.innerHTML = "Nie ma więcej pytań.";
-    questionContainer.style.pointerEvents = "none";
+    document.querySelector('.flip-card').style.pointerEvents = "none";
     nextQuestionButton.style.opacity = 0.1;
     nextQuestionButton.style.pointerEvents = "none";
-    answerContainer.style.display = "none";
   }
   
   updateProgressBar();
@@ -95,8 +96,12 @@ function toggleAnswer() {
 
 function nextQuestion() {
   if (currentQuestionIndex < flashcards.length) {
-    currentQuestionIndex++;
+    if (document.getElementsByClassName("is-flipped")) {
+      const flipCard = document.querySelector('.flip-card');
+      flipCard.classList.remove("is-flipped");
+    };
     answerVisible = false;
+    currentQuestionIndex++;
     showQuestion();
     updateProgressBar();
   }
@@ -104,8 +109,13 @@ function nextQuestion() {
 
 function prevQuestion() {
   if (currentQuestionIndex > 0) {
-    currentQuestionIndex--;
+    if (document.getElementsByClassName("is-flipped")) {
+      const flipCard = document.querySelector('.flip-card');
+      flipCard.classList.remove("is-flipped");
+    };
+    document.querySelector('.flip-card').style.pointerEvents = "unset";
     answerVisible = false;
+    currentQuestionIndex--;
     showQuestion();
     updateProgressBar();
   }
