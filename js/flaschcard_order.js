@@ -1,6 +1,8 @@
 var flashcards;
 var currentQuestionIndex = 0;
 var answerVisible = false;
+var touchStartX = 0;
+var touchEndX = 0;
 
 document.addEventListener("DOMContentLoaded", function () {
   var categorySpan = document.getElementById("categorySpan");
@@ -28,17 +30,41 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .catch(error => console.error('Błąd pobierania danych z pliku JSON:', error));
   }
-  window.addEventListener("load", function() {
+
+  window.addEventListener("load", function () {
     fetchFlashcards(category);
   });
 
   const flipCard = document.querySelector('.flip-card');
 
+  function handleTouchStart(e) {
+    touchStartX = e.changedTouches[0].clientX;
+  }
+
+  function handleTouchEnd(e) {
+    touchEndX = e.changedTouches[0].clientX;
+    handleSwipe();
+  }
+
   flipCard.addEventListener('click', () => {
     flipCard.classList.toggle('is-flipped');
     toggleAnswer();
   });
+
+  flipCard.addEventListener('touchstart', handleTouchStart);
+
+  flipCard.addEventListener('touchend', handleTouchEnd);
 });
+
+function handleSwipe() {
+  const swipeThreshold = 50;
+
+  if (touchEndX < touchStartX - swipeThreshold) {
+    nextQuestion();
+  } else if (touchEndX > touchStartX + swipeThreshold) {
+    prevQuestion();
+  }
+}
 
 function showQuestion() {
   var questionContainer = document.getElementById("question-container");
@@ -56,7 +82,7 @@ function showQuestion() {
   }
 
   if (currentQuestionIndex < flashcards.length) {
-    var randomQuestion = flashcards[currentQuestionIndex].question; 
+    var randomQuestion = flashcards[currentQuestionIndex].question;
     var randomAnswer = flashcards[currentQuestionIndex].answer;
 
     if (!answerVisible) {
@@ -70,14 +96,17 @@ function showQuestion() {
       answerContainer.style.display = "block";
       questionContainer.style.display = "block";
     }
+
+    document.querySelector('.flip-card').style.pointerEvents = "unset";
     
   } else {
     questionContainer.innerHTML = "Nie ma więcej pytań.";
     document.querySelector('.flip-card').style.pointerEvents = "none";
     nextQuestionButton.style.opacity = 0.1;
     nextQuestionButton.style.pointerEvents = "none";
+    
   }
-  
+
   updateProgressBar();
 }
 
@@ -90,7 +119,7 @@ function updateProgressBar() {
 }
 
 function toggleAnswer() {
-  answerVisible = !answerVisible; 
+  answerVisible = !answerVisible;
   showQuestion();
 }
 
@@ -104,6 +133,8 @@ function nextQuestion() {
     currentQuestionIndex++;
     showQuestion();
     updateProgressBar();
+  } else {
+    document.querySelector('.flip-card').style.pointerEvents = "none";
   }
 }
 
@@ -120,6 +151,8 @@ function prevQuestion() {
     updateProgressBar();
   }
 }
+
 function redirectToIndex() {
   window.location.href = "./pages/languages.html";
 }
+
