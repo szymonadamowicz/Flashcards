@@ -38,8 +38,31 @@ document.addEventListener("DOMContentLoaded", function () {
 
   flipCard.addEventListener('click', () => {
     flipCard.classList.toggle('is-flipped');
-    toggleAnswer();
   });
+
+
+function handleTouchStart(e) {
+  touchStartX = e.changedTouches[0].clientX;
+}
+
+function handleTouchEnd(e) {
+  const touchEndX = e.changedTouches[0].clientX;
+
+  handleSwipe(touchEndX);
+}
+
+function handleSwipe(touchEndX) {
+  const swipeThreshold = 50;
+
+  if (touchEndX < touchStartX - swipeThreshold) {
+    nextQuestion();
+  } else if (touchEndX > touchStartX + swipeThreshold) {
+    console.log("cannot go back on the interview mode");
+  }
+}
+
+document.querySelector('.page').addEventListener('touchstart', handleTouchStart);
+document.querySelector('.page').addEventListener('touchend', handleTouchEnd);
 });
 
 function showQuestion() {
@@ -47,7 +70,7 @@ function showQuestion() {
   if (questionsUsed.length == flashcards.length) {
     questionContainer = document.getElementById("question-container");
     questionContainer.innerHTML = "Nie ma więcej pytań.";
-    questionContainer.style.pointerEvents = "none";
+    document.querySelector(".page").style.pointerEvents = "none";
     nextQuestionButton.style.opacity = 0.1;
     nextQuestionButton.style.pointerEvents = "none";
     var help = document.getElementById("help");

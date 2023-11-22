@@ -133,7 +133,7 @@ i.material-icons {
 
 
 .next-previous-button {
-  margin-top: 50px;
+  margin-top: 7px;
   margin-bottom: 20px;
   width: 100%;
   padding-left: 40px;
@@ -178,4 +178,8 @@ i.material-icons {
 
 .flip-card-back {
   transform: rotateY(180deg);
+}
+
+.page {
+  min-height: 70%;
 }

@@ -36,35 +36,35 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const flipCard = document.querySelector('.flip-card');
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('is-flipped');
+    toggleAnswer();
+  });
 
   function handleTouchStart(e) {
     touchStartX = e.changedTouches[0].clientX;
   }
 
   function handleTouchEnd(e) {
-    touchEndX = e.changedTouches[0].clientX;
-    handleSwipe();
+    const touchEndX = e.changedTouches[0].clientX;
+
+    handleSwipe(touchEndX);
   }
 
-  flipCard.addEventListener('click', () => {
-    flipCard.classList.toggle('is-flipped');
-    toggleAnswer();
-  });
+  function handleSwipe(touchEndX) {
+    const swipeThreshold = 50;
 
-  flipCard.addEventListener('touchstart', handleTouchStart);
+    const pageElement = document.querySelector('.page');
 
-  flipCard.addEventListener('touchend', handleTouchEnd);
-});
-
-function handleSwipe() {
-  const swipeThreshold = 50;
-
-  if (touchEndX < touchStartX - swipeThreshold) {
-    nextQuestion();
-  } else if (touchEndX > touchStartX + swipeThreshold) {
-    prevQuestion();
+    if (touchEndX < touchStartX - swipeThreshold) {
+      nextQuestion();
+    } else if (touchEndX > touchStartX + swipeThreshold) {
+      prevQuestion();
+    }
   }
-}
+
+  document.querySelector('.page').addEventListener('touchstart', handleTouchStart);
+  document.querySelector('.page').addEventListener('touchend', handleTouchEnd);
 
 function showQuestion() {
   var questionContainer = document.getElementById("question-container");
@@ -155,4 +155,4 @@ function prevQuestion() {
 function redirectToIndex() {
   window.location.href = "./pages/languages.html";
 }
-
+});
