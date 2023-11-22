@@ -65,6 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector('.page').addEventListener('touchstart', handleTouchStart);
   document.querySelector('.page').addEventListener('touchend', handleTouchEnd);
+});
 
 function showQuestion() {
   var questionContainer = document.getElementById("question-container");
@@ -155,4 +156,4 @@ function prevQuestion() {
 function redirectToIndex() {
   window.location.href = "./pages/languages.html";
 }
-});
+
