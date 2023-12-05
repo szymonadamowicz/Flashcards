@@ -18,26 +18,28 @@ document.addEventListener("DOMContentLoaded", function () {
   var category = categorySpan.textContent;
 
   function fetchFlashcards(category) {
-    fetch('/files/flashcards.json')
-      .then(response => response.json())
-      .then(data => {
+    fetch("/files/flashcards.json")
+      .then((response) => response.json())
+      .then((data) => {
         if (data[category]) {
           flashcards = data[category];
           showQuestion();
         } else {
-          console.error('Kategoria nie istnieje w pliku JSON:', category);
+          console.error("Kategoria nie istnieje w pliku JSON:", category);
         }
       })
-      .catch(error => console.error('Błąd pobierania danych z pliku JSON:', error));
+      .catch((error) =>
+        console.error("Błąd pobierania danych z pliku JSON:", error)
+      );
   }
 
   window.addEventListener("load", function () {
     fetchFlashcards(category);
   });
 
-  const flipCard = document.querySelector('.flip-card');
-  flipCard.addEventListener('click', () => {
-    flipCard.classList.toggle('is-flipped');
+  const flipCard = document.querySelector(".flip-card");
+  flipCard.addEventListener("click", () => {
+    flipCard.classList.toggle("is-flipped");
     toggleAnswer();
   });
 
@@ -54,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function handleSwipe(touchEndX) {
     const swipeThreshold = 50;
 
-    const pageElement = document.querySelector('.page');
+    const pageElement = document.querySelector(".page");
 
     if (touchEndX < touchStartX - swipeThreshold) {
       nextQuestion();
@@ -63,8 +65,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  document.querySelector('.page').addEventListener('touchstart', handleTouchStart);
-  document.querySelector('.page').addEventListener('touchend', handleTouchEnd);
+  document
+    .querySelector(".page")
+    .addEventListener("touchstart", handleTouchStart);
+  document.querySelector(".page").addEventListener("touchend", handleTouchEnd);
 });
 
 function showQuestion() {
@@ -85,38 +89,35 @@ function showQuestion() {
   if (currentQuestionIndex < flashcards.length) {
     var randomQuestion = flashcards[currentQuestionIndex].question;
     var randomAnswer = flashcards[currentQuestionIndex].answer;
-
     if (!answerVisible) {
-      questionContainer.innerHTML = randomQuestion;
+      questionContainer.innerHTML = marked.parse(randomQuestion);
       nextQuestionButton.style.opacity = 1;
       nextQuestionButton.style.pointerEvents = "unset";
       questionContainer.style.pointerEvents = "unset";
       questionContainer.style.display = "block";
     } else {
-      answerContainer.innerHTML = randomAnswer;
+      answerContainer.innerHTML = marked.parse(randomAnswer);
       answerContainer.style.display = "block";
       questionContainer.style.display = "block";
     }
 
-    document.querySelector('.flip-card').style.pointerEvents = "unset";
-    
+    document.querySelector(".flip-card").style.pointerEvents = "unset";
   } else {
     questionContainer.innerHTML = "Nie ma więcej pytań.";
-    document.querySelector('.flip-card').style.pointerEvents = "none";
+    document.querySelector(".flip-card").style.pointerEvents = "none";
     nextQuestionButton.style.opacity = 0.1;
     nextQuestionButton.style.pointerEvents = "none";
-    
   }
 
   updateProgressBar();
 }
 
-
 function updateProgressBar() {
   const progressBar = document.getElementById("progress-bar");
   const progress = (currentQuestionIndex / flashcards.length) * 100;
   progressBar.style.width = progress + "%";
-  document.getElementById("abc").innerHTML = "Ukończono " + currentQuestionIndex + '/' + flashcards.length;
+  document.getElementById("abc").innerHTML =
+    "Ukończono " + currentQuestionIndex + "/" + flashcards.length;
 }
 
 function toggleAnswer() {
@@ -127,25 +128,25 @@ function toggleAnswer() {
 function nextQuestion() {
   if (currentQuestionIndex < flashcards.length) {
     if (document.getElementsByClassName("is-flipped")) {
-      const flipCard = document.querySelector('.flip-card');
+      const flipCard = document.querySelector(".flip-card");
       flipCard.classList.remove("is-flipped");
-    };
+    }
     answerVisible = false;
     currentQuestionIndex++;
     showQuestion();
     updateProgressBar();
   } else {
-    document.querySelector('.flip-card').style.pointerEvents = "none";
+    document.querySelector(".flip-card").style.pointerEvents = "none";
   }
 }
 
 function prevQuestion() {
   if (currentQuestionIndex > 0) {
     if (document.getElementsByClassName("is-flipped")) {
-      const flipCard = document.querySelector('.flip-card');
+      const flipCard = document.querySelector(".flip-card");
       flipCard.classList.remove("is-flipped");
-    };
-    document.querySelector('.flip-card').style.pointerEvents = "unset";
+    }
+    document.querySelector(".flip-card").style.pointerEvents = "unset";
     answerVisible = false;
     currentQuestionIndex--;
     showQuestion();
@@ -156,4 +157,3 @@ function prevQuestion() {
 function redirectToIndex() {
   window.location.href = "./pages/languages.html";
 }
-
